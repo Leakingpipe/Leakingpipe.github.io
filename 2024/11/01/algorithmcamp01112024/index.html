@@ -1,0 +1,212 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>代码随想录算法训练营第三天|203.移除链表元素 707.设计链表 206.反转链表 | Chengcen Fu's Blog</title><meta name="author" content="Chengcen Fu"><meta name="copyright" content="Chengcen Fu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="代码随想录算法训练营第三天|203.移除链表元素 707.设计链表 206.反转链表现在是第二章，链表部分。需要注意链表定义的方法，有的面试需要手搓。 203.移除链表元素题目链接： 203.移除链表元素NOTE: 用C&#x2F;C++的时候，删除节点之后一定记得 释放内存！！！  (Java或Python的就不用手动管理内存了) __删除头结点__：这里有两种方法    把头结点改为第二个节点">
+<meta property="og:type" content="article">
+<meta property="og:title" content="代码随想录算法训练营第三天|203.移除链表元素 707.设计链表 206.反转链表">
+<meta property="og:url" content="http://example.com/2024/11/01/algorithmcamp01112024/index.html">
+<meta property="og:site_name" content="Chengcen Fu&#39;s Blog">
+<meta property="og:description" content="代码随想录算法训练营第三天|203.移除链表元素 707.设计链表 206.反转链表现在是第二章，链表部分。需要注意链表定义的方法，有的面试需要手搓。 203.移除链表元素题目链接： 203.移除链表元素NOTE: 用C&#x2F;C++的时候，删除节点之后一定记得 释放内存！！！  (Java或Python的就不用手动管理内存了) __删除头结点__：这里有两种方法    把头结点改为第二个节点">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/img/favicon.png">
+<meta property="article:published_time" content="2024-11-01T15:00:00.000Z">
+<meta property="article:modified_time" content="2024-11-01T13:49:43.682Z">
+<meta property="article:author" content="Chengcen Fu">
+<meta property="article:tag" content="算法训练营第四十九期">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/favicon.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2024/11/01/algorithmcamp01112024/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Error',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '代码随想录算法训练营第三天|203.移除链表元素 707.设计链表 206.反转链表',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-11-01 10:49:43'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 22 || hour >= 10
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">Loading...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (false) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/favicon.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/aboutme/"><i class="fa-fw fas fa-heart"></i><span> CV</span></a></div><div class="menus_item"><a class="site-page" href="/portfolio/"><i class="fa-fw fas fa-video"></i><span> Portfolio</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Chengcen Fu's Blog"><span class="site-name">Chengcen Fu's Blog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/aboutme/"><i class="fa-fw fas fa-heart"></i><span> CV</span></a></div><div class="menus_item"><a class="site-page" href="/portfolio/"><i class="fa-fw fas fa-video"></i><span> Portfolio</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">代码随想录算法训练营第三天|203.移除链表元素 707.设计链表 206.反转链表</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2024-11-01T15:00:00.000Z" title="Created 2024-11-01 12:00:00">2024-11-01</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-11-01T13:49:43.682Z" title="Updated 2024-11-01 10:49:43">2024-11-01</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="代码随想录算法训练营第三天|203.移除链表元素 707.设计链表 206.反转链表"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="代码随想录算法训练营第三天-203-移除链表元素-707-设计链表-206-反转链表"><a href="#代码随想录算法训练营第三天-203-移除链表元素-707-设计链表-206-反转链表" class="headerlink" title="代码随想录算法训练营第三天|203.移除链表元素 707.设计链表 206.反转链表"></a>代码随想录算法训练营第三天|203.移除链表元素 707.设计链表 206.反转链表</h1><p>现在是第二章，链表部分。<br>需要注意链表定义的方法，有的面试需要手搓。</p>
+<h2 id="203-移除链表元素"><a href="#203-移除链表元素" class="headerlink" title="203.移除链表元素"></a>203.移除链表元素</h2><h3 id="题目链接：-203-移除链表元素"><a href="#题目链接：-203-移除链表元素" class="headerlink" title="题目链接： 203.移除链表元素"></a>题目链接： <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/remove-linked-list-elements/description/">203.移除链表元素</a></h3><p><strong>NOTE:</strong> 用C&#x2F;C++的时候，删除节点之后一定记得 <strong>释放内存！！！</strong>  (Java或Python的就不用手动管理内存了)</p>
+<p>__删除头结点__：这里有两种方法  </p>
+<ol>
+<li>把头结点改为第二个节点，然后释放原来头结点的内存的。这种情况需要单独写一段逻辑来删除头结点。<br><img src="/img/ag_day3_02.png"><br>这个情况，时间复杂度为O(n)，空间复杂度为O(1).</li>
+<li>如果想用统一的逻辑来删除链表节点的话，可以设置 <strong>虚拟头结点</strong> ，那么删除第一个元素的方式就可以统一用一个逻辑了。<br><img src="/img/ag_day3_01.png"><br><img src="/img/ag_day3_03.png"><br>最后要return头结点的时候，<code>return dummynode->next</code>，才是新的头结点。<br>这个方法的：时间复杂度:为O(n)，空间复杂度为O(1)。</li>
+</ol>
+<p>用递归的思路解题：<br>第一种情况就是链表为空，那么就不需要移除元素。第二种情况先检查头结点的值是否等于val，如果是的话就移除头结点，结果就是这个头结点的后续节点递归。如果头结点的值不为val，那么输出结果就是头结点以及它后面的节点递归得到的新量表拼接的结果，这种情况下，时间复杂度为O(n)，空间复杂度为O(n)。<br><img src="/img/ag_day3_04.png"></p>
+<h2 id="707-设计链表"><a href="#707-设计链表" class="headerlink" title="707.设计链表"></a>707.设计链表</h2><h3 id="题目链接：-707-设计链表"><a href="#题目链接：-707-设计链表" class="headerlink" title="题目链接： 707.设计链表"></a>题目链接： <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/design-linked-list/">707.设计链表</a></h3><p>这道题基本上概括了链表的基操<br>这里同样可以运用原来的链表进行操作，也可以设置虚拟头节点进行操作。<br>时间复杂度：涉及 index 的相关操作为 O(index), 其余为 O(1)<br>空间复杂度: O(n)  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyLinkedList</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">LinkedNode</span> &#123;</span><br><span class="line">    <span class="type">int</span> val;</span><br><span class="line">    LinkedNode* next;</span><br><span class="line">    <span class="built_in">LinkedNode</span>(<span class="type">int</span> x) : <span class="built_in">val</span>(x), <span class="built_in">next</span>(<span class="literal">nullptr</span>) &#123;&#125;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">MyLinkedList</span>() &#123;</span><br><span class="line">        _dummyHead = <span class="keyword">new</span> <span class="built_in">LinkedNode</span>(<span class="number">0</span>);</span><br><span class="line">        _size = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">get</span><span class="params">(<span class="type">int</span> index)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(index &gt; (_size - <span class="number">1</span>) || index &lt; <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        LinkedNode* cur = _dummyHead-&gt;next;</span><br><span class="line">        <span class="keyword">while</span>(index--)&#123;</span><br><span class="line">            cur = cur-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> cur-&gt;val;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">addAtHead</span><span class="params">(<span class="type">int</span> val)</span> </span>&#123;</span><br><span class="line">        LinkedNode* newNode = <span class="keyword">new</span> <span class="built_in">LinkedNode</span>(val);</span><br><span class="line">        newNode-&gt;next = _dummyHead-&gt;next;</span><br><span class="line">        _dummyHead-&gt;next = newNode;</span><br><span class="line">        _size++;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">addAtTail</span><span class="params">(<span class="type">int</span> val)</span> </span>&#123;</span><br><span class="line">        LinkedNode* newNode = <span class="keyword">new</span> <span class="built_in">LinkedNode</span>(val);</span><br><span class="line">        LinkedNode* cur = _dummyHead;</span><br><span class="line">        <span class="keyword">while</span>(cur-&gt;next != <span class="literal">nullptr</span>)&#123;</span><br><span class="line">            cur = cur-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        cur-&gt;next = newNode;</span><br><span class="line">        _size++;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">addAtIndex</span><span class="params">(<span class="type">int</span> index, <span class="type">int</span> val)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(index &gt; _size) <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">if</span>(index &lt; <span class="number">0</span>) index = <span class="number">0</span>;</span><br><span class="line">        LinkedNode* newNode = <span class="keyword">new</span> <span class="built_in">LinkedNode</span>(val);</span><br><span class="line">        LinkedNode* cur = _dummyHead;</span><br><span class="line">        <span class="keyword">while</span>(index--)&#123;</span><br><span class="line">            cur = cur-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        newNode-&gt;next = cur-&gt;next;</span><br><span class="line">        cur-&gt;next = newNode;</span><br><span class="line">        _size++;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">deleteAtIndex</span><span class="params">(<span class="type">int</span> index)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(index &gt;= _size || index &lt; <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        LinkedNode* cur = _dummyHead;</span><br><span class="line">        <span class="keyword">while</span>(index--) &#123;</span><br><span class="line">            cur = cur -&gt; next;</span><br><span class="line">        &#125;</span><br><span class="line">        LinkedNode* tmp = cur-&gt;next;</span><br><span class="line">        cur-&gt;next = cur-&gt;next-&gt;next;</span><br><span class="line">        <span class="keyword">delete</span> tmp;</span><br><span class="line">        tmp = <span class="literal">nullptr</span>;</span><br><span class="line">        _size--;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">printLinkedList</span><span class="params">()</span></span>&#123;</span><br><span class="line">        LinkedNode* cur = _dummyHead;</span><br><span class="line">        <span class="keyword">while</span>(cur-&gt;next != <span class="literal">nullptr</span>)&#123;</span><br><span class="line">            cout &lt;&lt; cur-&gt;next-&gt;val&lt;&lt;<span class="string">&quot;&quot;</span>;</span><br><span class="line">            cur = cur-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        cout&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="type">int</span> _size;</span><br><span class="line">    LinkedNode* _dummyHead;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="206-反转链表"><a href="#206-反转链表" class="headerlink" title="206.反转链表"></a>206.反转链表</h2><h3 id="题目链接：-206-反转链表"><a href="#题目链接：-206-反转链表" class="headerlink" title="题目链接： 206.反转链表"></a>题目链接： <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/reverse-linked-list/description/">206.反转链表</a></h3><p>《随想录》中介绍了两种方法，一个是双指针法，一个是递归法。</p>
+<h4 id="双指针法"><a href="#双指针法" class="headerlink" title="双指针法"></a>双指针法</h4><p>只需要改变链表的next指针的指向，将其翻转就行，不用重新定义新链表。<br>先定义一个cur指针，指向头结点，再定义一个pre指针，并初始化为null。<br>先将cur-&gt;next节点用temp指针保存一下，再改变cur-&gt;next的指向，将这个指向pre。然后重复这个操作。最后return pre指针，pre指针就指向了新的头结点。</p>
+<pre><code class="cpp">class Solution &#123;
+public:
+    ListNode* reverseList(ListNode* head) &#123;
+        ListNode* temp;
+        ListNode* cur = head;
+        ListNode* pre = NULL;
+        while(cur)&#123;
+            temp = cur-&gt;next;
+            cur-&gt;next = pre;
+            pre = cur;
+            cur = temp;
+        &#125;
+        return pre;
+    &#125;
+&#125;;
+</code></pre>
+<p>它的时间复杂度: O(n)，空间复杂度: O(1)</p>
+<h4 id="递归法"><a href="#递归法" class="headerlink" title="递归法"></a>递归法</h4><p>逻辑和双指针法相同，当<code>cur</code>为空就结束循环，并不断将<code>cur</code>指向<code>pre</code>。这种方法既可以从后往前翻转指针，也可以从前往后翻转指针。<br>时间复杂度: O(n), 要递归处理链表的每个节点<br>空间复杂度: O(n), 递归调用了 n 层栈空间</p>
+<h3 id="今日总结"><a href="#今日总结" class="headerlink" title="今日总结"></a>今日总结</h3><h4 id="今日用时：2h"><a href="#今日用时：2h" class="headerlink" title="今日用时：2h"></a>今日用时：<u>2h</u></h4></article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5%E7%AC%AC%E5%9B%9B%E5%8D%81%E4%B9%9D%E6%9C%9F/">算法训练营第四十九期</a></div><div class="post_share"><div class="social-share" data-image="/img/favicon.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2024/10/31/algorithmcamp31102024/" title="代码随想录算法训练营第二天|209.长度最小的子数组 59.螺旋矩阵II 前缀和的思想"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next</div><div class="next_info">代码随想录算法训练营第二天|209.长度最小的子数组 59.螺旋矩阵II 前缀和的思想</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5%E7%AC%AC%E4%B8%89%E5%A4%A9-203-%E7%A7%BB%E9%99%A4%E9%93%BE%E8%A1%A8%E5%85%83%E7%B4%A0-707-%E8%AE%BE%E8%AE%A1%E9%93%BE%E8%A1%A8-206-%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8"><span class="toc-number">1.</span> <span class="toc-text">代码随想录算法训练营第三天|203.移除链表元素 707.设计链表 206.反转链表</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#203-%E7%A7%BB%E9%99%A4%E9%93%BE%E8%A1%A8%E5%85%83%E7%B4%A0"><span class="toc-number">1.1.</span> <span class="toc-text">203.移除链表元素</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E9%93%BE%E6%8E%A5%EF%BC%9A-203-%E7%A7%BB%E9%99%A4%E9%93%BE%E8%A1%A8%E5%85%83%E7%B4%A0"><span class="toc-number">1.1.1.</span> <span class="toc-text">题目链接： 203.移除链表元素</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#707-%E8%AE%BE%E8%AE%A1%E9%93%BE%E8%A1%A8"><span class="toc-number">1.2.</span> <span class="toc-text">707.设计链表</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E9%93%BE%E6%8E%A5%EF%BC%9A-707-%E8%AE%BE%E8%AE%A1%E9%93%BE%E8%A1%A8"><span class="toc-number">1.2.1.</span> <span class="toc-text">题目链接： 707.设计链表</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#206-%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8"><span class="toc-number">1.3.</span> <span class="toc-text">206.反转链表</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E9%93%BE%E6%8E%A5%EF%BC%9A-206-%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8"><span class="toc-number">1.3.1.</span> <span class="toc-text">题目链接： 206.反转链表</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%8C%E6%8C%87%E9%92%88%E6%B3%95"><span class="toc-number">1.3.1.1.</span> <span class="toc-text">双指针法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%92%E5%BD%92%E6%B3%95"><span class="toc-number">1.3.1.2.</span> <span class="toc-text">递归法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8A%E6%97%A5%E6%80%BB%E7%BB%93"><span class="toc-number">1.3.2.</span> <span class="toc-text">今日总结</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%8A%E6%97%A5%E7%94%A8%E6%97%B6%EF%BC%9A2h"><span class="toc-number">1.3.2.1.</span> <span class="toc-text">今日用时：2h</span></a></li></ol></li></ol></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2024 By Chengcen Fu</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Welcome!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
