@@ -1,0 +1,192 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>代码随想录算法训练营第四十二天|买卖股票系列合集 | Chengcen Fu's Blog</title><meta name="author" content="Chengcen Fu"><meta name="copyright" content="Chengcen Fu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="代码随想录算法训练营第四十二天|买卖股票系列合集动态规划part9，先过思路，后补码 188.买卖股票的最佳时机IV题目链接: 188.买卖股票的最佳时机IV这里要求最多有k次交易。仍然用五部曲分析：仍然是使用一个二维数组，dp[i][j]，第i天的状态为j，所剩下的最大现金是dp[i][j]j的状态和昨天的题一样，除了0表示为不操作以外，其他情况下，偶数是卖出操作，奇数是买入操作。因为最多有k笔">
+<meta property="og:type" content="article">
+<meta property="og:title" content="代码随想录算法训练营第四十二天|买卖股票系列合集">
+<meta property="og:url" content="http://example.com/2024/12/10/algorithmcamp10122024/index.html">
+<meta property="og:site_name" content="Chengcen Fu&#39;s Blog">
+<meta property="og:description" content="代码随想录算法训练营第四十二天|买卖股票系列合集动态规划part9，先过思路，后补码 188.买卖股票的最佳时机IV题目链接: 188.买卖股票的最佳时机IV这里要求最多有k次交易。仍然用五部曲分析：仍然是使用一个二维数组，dp[i][j]，第i天的状态为j，所剩下的最大现金是dp[i][j]j的状态和昨天的题一样，除了0表示为不操作以外，其他情况下，偶数是卖出操作，奇数是买入操作。因为最多有k笔">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/img/favicon.png">
+<meta property="article:published_time" content="2024-12-10T15:00:00.000Z">
+<meta property="article:modified_time" content="2024-12-27T04:02:56.486Z">
+<meta property="article:author" content="Chengcen Fu">
+<meta property="article:tag" content="算法训练营第四十九期">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/favicon.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2024/12/10/algorithmcamp10122024/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Error',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '代码随想录算法训练营第四十二天|买卖股票系列合集',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-12-27 01:02:56'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 22 || hour >= 10
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">Loading...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (false) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/favicon.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">44</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/aboutme/"><i class="fa-fw fas fa-heart"></i><span> CV</span></a></div><div class="menus_item"><a class="site-page" href="/portfolio/"><i class="fa-fw fas fa-video"></i><span> Portfolio</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Chengcen Fu's Blog"><span class="site-name">Chengcen Fu's Blog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/aboutme/"><i class="fa-fw fas fa-heart"></i><span> CV</span></a></div><div class="menus_item"><a class="site-page" href="/portfolio/"><i class="fa-fw fas fa-video"></i><span> Portfolio</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">代码随想录算法训练营第四十二天|买卖股票系列合集</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2024-12-10T15:00:00.000Z" title="Created 2024-12-10 12:00:00">2024-12-10</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-12-27T04:02:56.486Z" title="Updated 2024-12-27 01:02:56">2024-12-27</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="代码随想录算法训练营第四十二天|买卖股票系列合集"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="代码随想录算法训练营第四十二天-买卖股票系列合集"><a href="#代码随想录算法训练营第四十二天-买卖股票系列合集" class="headerlink" title="代码随想录算法训练营第四十二天|买卖股票系列合集"></a>代码随想录算法训练营第四十二天|买卖股票系列合集</h1><p>动态规划part9，先过思路，后补码</p>
+<h2 id="188-买卖股票的最佳时机IV"><a href="#188-买卖股票的最佳时机IV" class="headerlink" title="188.买卖股票的最佳时机IV"></a>188.买卖股票的最佳时机IV</h2><h3 id="题目链接-188-买卖股票的最佳时机IV"><a href="#题目链接-188-买卖股票的最佳时机IV" class="headerlink" title="题目链接: 188.买卖股票的最佳时机IV"></a>题目链接: <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-iv/">188.买卖股票的最佳时机IV</a></h3><p>这里要求最多有k次交易。仍然用五部曲分析：<br>仍然是使用一个二维数组，dp[i][j]，第i天的状态为j，所剩下的最大现金是dp[i][j]<br>j的状态和昨天的题一样，除了0表示为不操作以外，其他情况下，偶数是卖出操作，奇数是买入操作。因为最多有k笔交易，所以j的范围就是2k+1。  </p>
+<p>首先，dp[i][1]状态，有两个操作：<br>操作一：第i天买入股票了，那么dp[i][1] &#x3D; dp[i - 1][0] - prices[i]<br>操作二：第i天没有操作，而是沿用前一天买入的状态，即：dp[i][1] &#x3D; dp[i - 1][1]<br>在这两个操作当中选择最大的一个，那么递推公式就是：dp[i][1] &#x3D; max(dp[i - 1][0] - prices[i], dp[i - 1][1]);</p>
+<p>dp[i][2]也有两个操作：<br>操作一：第i天卖出股票了，那么dp[i][2] &#x3D; dp[i - 1][1] + prices[i]<br>操作二：第i天没有操作，沿用前一天卖出股票的状态，即：dp[i][2] &#x3D; dp[i - 1][2]<br>同上，递推公式为：dp[i][2] &#x3D; max(dp[i - 1][1] + prices[i], dp[i - 1][2])<br>剩下的状态以此类推。</p>
+<p>初始化数组，除了dp[0][0] &#x3D; 0以外，dp[0][j]都初始化为-price[0]。</p>
+<h2 id="309-最佳买卖股票时机含冷冻期"><a href="#309-最佳买卖股票时机含冷冻期" class="headerlink" title="309.最佳买卖股票时机含冷冻期"></a>309.最佳买卖股票时机含冷冻期</h2><h3 id="题目链接-309-最佳买卖股票时机含冷冻期"><a href="#题目链接-309-最佳买卖股票时机含冷冻期" class="headerlink" title="题目链接: 309.最佳买卖股票时机含冷冻期"></a>题目链接: <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-with-cooldown/">309.最佳买卖股票时机含冷冻期</a></h3><p>本题添加了冷冻期。有两个要求，首先不能同时参与多笔交易，其次，这道题出现了冷冻期，在卖出股票后的第二天没有办法买入股票，也就是一天的冷冻期。<br>首先确定dp数组和下标：dp[i][j]，第i天状态为j，所剩的最多现金为dp[i][j]；<br>本题每天有四个状态，0.持有股票 1.不持有股票，保持卖出的状态 2.不持有股票，当天卖出的 3.冷冻期<br>j就是这四种状态  </p>
+<p>递推公式：<br>四种不同的状态，有不同的递推公式：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dp[i][<span class="number">0</span>] = <span class="built_in">max</span>(dp[i - <span class="number">1</span>][<span class="number">0</span>], <span class="built_in">max</span>(dp[i - <span class="number">1</span>][<span class="number">3</span>], dp[i - <span class="number">1</span>][<span class="number">1</span>]) - prices[i]);<span class="comment">//要么是前一天持有股票，要么是今天买入，那么这种情况也有两个具体情况，也就是前一天是冷冻期以及前一天保持股票卖出的状态</span></span><br><span class="line">dp[i][<span class="number">1</span>] = <span class="built_in">max</span>(dp[i - <span class="number">1</span>][<span class="number">1</span>], dp[i - <span class="number">1</span>][<span class="number">3</span>]);<span class="comment">//前一天是状态二或者前一天是冷冻期的状况</span></span><br><span class="line">dp[i][<span class="number">2</span>] = dp[i - <span class="number">1</span>][<span class="number">0</span>] + prices[i];<span class="comment">//状态三的操作则是，昨天持有股票今天卖出的情况</span></span><br><span class="line">dp[i][<span class="number">3</span>] = dp[i - <span class="number">1</span>][<span class="number">2</span>];<span class="comment">//冷冻期当天，操作就是昨天卖出了股票</span></span><br></pre></td></tr></table></figure>
+
+<p>数组初始化：<br>第0天持有股票的状态即状态一，dp[0][0] &#x3D; -prices[0]，状态二三都初始化为0</p>
+<p>遍历顺序是从前先后遍历，因为dp[i]取决于dp[i-1]</p>
+<h2 id="714-买卖股票的最佳时机含手续费"><a href="#714-买卖股票的最佳时机含手续费" class="headerlink" title="714.买卖股票的最佳时机含手续费"></a>714.买卖股票的最佳时机含手续费</h2><h3 id="题目链接-714-买卖股票的最佳时机含手续费"><a href="#题目链接-714-买卖股票的最佳时机含手续费" class="headerlink" title="题目链接: 714.买卖股票的最佳时机含手续费"></a>题目链接: <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/">714.买卖股票的最佳时机含手续费</a></h3><h3 id="今日总结"><a href="#今日总结" class="headerlink" title="今日总结"></a>今日总结</h3><h4 id="今日用时：1h"><a href="#今日用时：1h" class="headerlink" title="今日用时：1h"></a>今日用时：<u>1h</u></h4></article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5%E7%AC%AC%E5%9B%9B%E5%8D%81%E4%B9%9D%E6%9C%9F/">算法训练营第四十九期</a></div><div class="post_share"><div class="social-share" data-image="/img/favicon.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/12/12/algorithmcamp12122024/" title="代码随想录算法训练营第四十四天|1143.最长公共子序列 1035.不相交的线 53. 最大子序和 392.判断子序列"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Previous</div><div class="prev_info">代码随想录算法训练营第四十四天|1143.最长公共子序列 1035.不相交的线 53. 最大子序和 392.判断子序列</div></div></a></div><div class="next-post pull-right"><a href="/2024/12/09/algorithmcamp09122024/" title="代码随想录算法训练营第四十一天|买卖股票的最佳时机合集"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next</div><div class="next_info">代码随想录算法训练营第四十一天|买卖股票的最佳时机合集</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5%E7%AC%AC%E5%9B%9B%E5%8D%81%E4%BA%8C%E5%A4%A9-%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%B3%BB%E5%88%97%E5%90%88%E9%9B%86"><span class="toc-number">1.</span> <span class="toc-text">代码随想录算法训练营第四十二天|买卖股票系列合集</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#188-%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BAIV"><span class="toc-number">1.1.</span> <span class="toc-text">188.买卖股票的最佳时机IV</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E9%93%BE%E6%8E%A5-188-%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BAIV"><span class="toc-number">1.1.1.</span> <span class="toc-text">题目链接: 188.买卖股票的最佳时机IV</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#309-%E6%9C%80%E4%BD%B3%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E6%97%B6%E6%9C%BA%E5%90%AB%E5%86%B7%E5%86%BB%E6%9C%9F"><span class="toc-number">1.2.</span> <span class="toc-text">309.最佳买卖股票时机含冷冻期</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E9%93%BE%E6%8E%A5-309-%E6%9C%80%E4%BD%B3%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E6%97%B6%E6%9C%BA%E5%90%AB%E5%86%B7%E5%86%BB%E6%9C%9F"><span class="toc-number">1.2.1.</span> <span class="toc-text">题目链接: 309.最佳买卖股票时机含冷冻期</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#714-%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA%E5%90%AB%E6%89%8B%E7%BB%AD%E8%B4%B9"><span class="toc-number">1.3.</span> <span class="toc-text">714.买卖股票的最佳时机含手续费</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E9%93%BE%E6%8E%A5-714-%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA%E5%90%AB%E6%89%8B%E7%BB%AD%E8%B4%B9"><span class="toc-number">1.3.1.</span> <span class="toc-text">题目链接: 714.买卖股票的最佳时机含手续费</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8A%E6%97%A5%E6%80%BB%E7%BB%93"><span class="toc-number">1.3.2.</span> <span class="toc-text">今日总结</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%8A%E6%97%A5%E7%94%A8%E6%97%B6%EF%BC%9A1h"><span class="toc-number">1.3.2.1.</span> <span class="toc-text">今日用时：1h</span></a></li></ol></li></ol></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2024 - 2025 By Chengcen Fu</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Welcome!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
