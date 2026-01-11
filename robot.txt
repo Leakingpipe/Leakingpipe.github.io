@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Allow: /archives/
+Allow: /tags/
+Allow: /categories/
+
+Sitemap: https://leakingpipe.github.io/sitemap.xml
+Sitemap: https://leakingpipe.github.io/baidusitemap.xml
