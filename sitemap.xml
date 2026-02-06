@@ -223,6 +223,13 @@
   </url>
   
   <url>
+    <loc>https://leakingpipe.github.io/tags/Robotics/</loc>
+    <lastmod>2026-02-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://leakingpipe.github.io/tags/Projects/</loc>
     <lastmod>2026-02-06</lastmod>
     <changefreq>weekly</changefreq>
@@ -236,24 +243,17 @@
     <priority>0.2</priority>
   </url>
   
-  <url>
-    <loc>https://leakingpipe.github.io/tags/Robotics/</loc>
-    <lastmod>2026-02-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
 
   
   <url>
-    <loc>https://leakingpipe.github.io/categories/Graphics/</loc>
+    <loc>https://leakingpipe.github.io/categories/Robotics/</loc>
     <lastmod>2026-02-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://leakingpipe.github.io/categories/Tech-Index/</loc>
+    <loc>https://leakingpipe.github.io/categories/Graphics/</loc>
     <lastmod>2026-02-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -267,7 +267,7 @@
   </url>
   
   <url>
-    <loc>https://leakingpipe.github.io/categories/Robotics/</loc>
+    <loc>https://leakingpipe.github.io/categories/Tech-Index/</loc>
     <lastmod>2026-02-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
