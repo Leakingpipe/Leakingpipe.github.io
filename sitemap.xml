@@ -2,6 +2,51 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://leakingpipe.github.io/2026/02/06/notes_Robotics_001/</loc>
+    
+    <lastmod>2026-02-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://leakingpipe.github.io/2025/12/31/plan2026/</loc>
+    
+    <lastmod>2026-02-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://leakingpipe.github.io/2026/02/08/journal_20260208/</loc>
+    
+    <lastmod>2026-02-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://leakingpipe.github.io/2026/02/01/journal_20260201/</loc>
+    
+    <lastmod>2026-02-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://leakingpipe.github.io/2026/01/23/journal_20260125/</loc>
+    
+    <lastmod>2026-02-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://leakingpipe.github.io/portfolio/index.html</loc>
     
     <lastmod>2026-01-24</lastmod>
@@ -47,15 +92,6 @@
   </url>
   
   <url>
-    <loc>https://leakingpipe.github.io/2026/01/23/journal_20260125/</loc>
-    
-    <lastmod>2026-01-23</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://leakingpipe.github.io/aboutme/index.html</loc>
     
     <lastmod>2026-01-23</lastmod>
@@ -66,15 +102,6 @@
   
   <url>
     <loc>https://leakingpipe.github.io/2026/01/19/journal_20260118/</loc>
-    
-    <lastmod>2026-01-17</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://leakingpipe.github.io/2025/12/31/plan2026/</loc>
     
     <lastmod>2026-01-17</lastmod>
     
@@ -175,7 +202,7 @@
 
   <url>
     <loc>https://leakingpipe.github.io/</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-02-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -183,28 +210,35 @@
   
   <url>
     <loc>https://leakingpipe.github.io/tags/Knowledge-Base/</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-02-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://leakingpipe.github.io/tags/Journal/</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-02-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://leakingpipe.github.io/tags/Projects/</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-02-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://leakingpipe.github.io/tags/Computer-Science/</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-02-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://leakingpipe.github.io/tags/Robotics/</loc>
+    <lastmod>2026-02-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -213,21 +247,28 @@
   
   <url>
     <loc>https://leakingpipe.github.io/categories/Graphics/</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-02-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://leakingpipe.github.io/categories/Tech-Index/</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-02-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://leakingpipe.github.io/categories/Architecture/</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-02-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://leakingpipe.github.io/categories/Robotics/</loc>
+    <lastmod>2026-02-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
