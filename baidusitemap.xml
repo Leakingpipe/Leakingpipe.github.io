@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://leakingpipe.github.io/2026/02/09/notes_Robotics_002/</loc>
+    <lastmod>2026-02-09T05:49:14.717Z</lastmod>
+  </url>  <url>
     <loc>https://leakingpipe.github.io/2026/02/06/notes_Robotics_001/</loc>
-    <lastmod>2026-02-06T07:39:54.624Z</lastmod>
+    <lastmod>2026-02-09T05:12:39.500Z</lastmod>
   </url>  <url>
     <loc>https://leakingpipe.github.io/2026/01/10/studynotes_3dmath_01/</loc>
-    <lastmod>2026-02-06T07:38:52.642Z</lastmod>
+    <lastmod>2026-02-06T10:45:27.138Z</lastmod>
   </url>  <url>
     <loc>https://leakingpipe.github.io/2025/12/31/plan2026/</loc>
     <lastmod>2026-02-06T06:33:19.541Z</lastmod>
@@ -28,25 +31,13 @@
     <loc>https://leakingpipe.github.io/2024/10/20/project_raft/</loc>
     <lastmod>2026-01-24T14:14:56.907Z</lastmod>
   </url>  <url>
-    <loc>https://leakingpipe.github.io/2026/01/23/conceptsreview_003/</loc>
-    <lastmod>2026-01-24T10:05:00.000Z</lastmod>
-  </url>  <url>
     <loc>https://leakingpipe.github.io/2026/01/19/journal_20260118/</loc>
     <lastmod>2026-01-17T10:15:33.654Z</lastmod>
-  </url>  <url>
-    <loc>https://leakingpipe.github.io/2026/01/11/techindex_001/</loc>
-    <lastmod>2026-01-14T02:22:54.308Z</lastmod>
   </url>  <url>
     <loc>https://leakingpipe.github.io/2026/01/10/conceptsreview_001/</loc>
     <lastmod>2026-01-12T10:05:00.000Z</lastmod>
   </url>  <url>
-    <loc>https://leakingpipe.github.io/2026/01/10/studynotes_3dmath_02/</loc>
-    <lastmod>2026-01-11T09:04:37.308Z</lastmod>
-  </url>  <url>
     <loc>https://leakingpipe.github.io/2025/09/12/studynotes_ComputerArchitecture_01_A/</loc>
     <lastmod>2026-01-11T06:27:21.556Z</lastmod>
-  </url>  <url>
-    <loc>https://leakingpipe.github.io/2026/01/10/conceptsreview_002/</loc>
-    <lastmod>2026-01-10T12:00:00.000Z</lastmod>
   </url>
 </urlset>
